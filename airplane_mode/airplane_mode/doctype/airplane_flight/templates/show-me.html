@@ -1,0 +1,7 @@
+{% extends "templates/web.html" %} 
+{% block page_content %}
+
+ {set color = frappe.from_dic.get('color', 'black')}
+<div style="width:30px; height: 20px; background-color: {{ color }}; border: 1px solid green"></div>
+
+{% endblock %}
