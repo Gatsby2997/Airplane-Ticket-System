@@ -37,10 +37,10 @@ class AirplaneTicket(Document):
 		self.total_price = self.flight_price + t
 
 
-	#Code for random Seat Number
-	def before_save(self):
-		random_number = random.randint(1,60)
-		rand_letter = random.choice(string.ascii_uppercase[:5])
-		self.seat = f"{random_number}{rand_letter}"
+	# #Code for random Seat Number
+	# def before_save(self):
+	# 	random_number = random.randint(1,60)
+	# 	rand_letter = random.choice(string.ascii_uppercase[:5])
+	# 	self.seat = f"{random_number}{rand_letter}"
 
 
