@@ -23,9 +23,10 @@ class AirplaneTicket(Document):
         # Update the add_ons table with only unique entries
 		self.add_ons = unique_add_ons
 	
+	#check for passenger boarded or not
 	def before_submit(self):
 		if self.status != "Boarded":
-			frappe.throw(f'Dear {self.passenger}! you are not boarded yet',frappe.ValidationError)
+			frappe.throw(f'Dear {self.passenger} ! you are not boarded yet',frappe.ValidationError)
 
 	
 	# This is code for price calculation
