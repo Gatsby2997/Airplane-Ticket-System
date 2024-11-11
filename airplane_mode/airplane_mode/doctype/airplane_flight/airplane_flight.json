@@ -20,6 +20,8 @@
   "column_break_mdvy",
   "destination_airport",
   "destination_airport_code",
+  "crew_members_section",
+  "table_mjfx",
   "departure_details_section",
   "date_of_departure",
   "duration",
@@ -136,6 +138,16 @@
    "fieldname": "is_book",
    "fieldtype": "Check",
    "label": "Is Book"
+  },
+  {
+   "fieldname": "crew_members_section",
+   "fieldtype": "Section Break",
+   "label": "Crew Members"
+  },
+  {
+   "fieldname": "table_mjfx",
+   "fieldtype": "Table",
+   "options": "Crew Member in Flight"
   }
  ],
  "has_web_view": 1,
@@ -148,7 +160,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2024-10-15 11:16:16.928141",
+ "modified": "2024-11-12 00:04:39.823813",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
