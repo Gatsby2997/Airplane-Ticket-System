@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{shop_code}-{airport}",
+ "autoname": "format:{shop_code}-{type_of_shop}",
  "creation": "2024-11-12 00:51:13.458089",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,7 +16,6 @@
   "column_break_lkks",
   "monthly_rent",
   "section_break_pmhq",
-  "contract_expiry",
   "shop_code",
   "column_break_aiye",
   "type_of_shop",
@@ -79,12 +78,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "contract_expiry",
-   "fieldtype": "Date",
-   "label": "Contract Expiry",
-   "reqd": 1
-  },
-  {
    "fieldname": "shop_code",
    "fieldtype": "Data",
    "label": "Shop Code",
@@ -113,10 +106,11 @@
   }
  ],
  "has_web_view": 1,
+ "image_field": "shop_image",
  "index_web_pages_for_search": 1,
  "is_published_field": "publish",
  "links": [],
- "modified": "2024-11-12 09:17:34.050458",
+ "modified": "2024-11-12 22:17:42.008963",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
