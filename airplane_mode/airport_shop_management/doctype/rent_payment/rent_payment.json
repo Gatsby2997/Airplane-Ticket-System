@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{shop_name}-{payment_date}",
+ "creation": "2024-11-12 10:25:26.841644",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_date",
+  "rent_amount",
+  "status",
+  "column_break_bhvd",
+  "airport",
+  "contract",
+  "tenant_name",
+  "shop_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Date"
+  },
+  {
+   "fetch_from": "contract.monthly_rent",
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rent Amount",
+   "reqd": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nPaid\nOverdue",
+   "reqd": 1
+  },
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Contract",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "contract.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "contract.shop_name",
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "label": "Shop Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bhvd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-11-12 10:50:22.001828",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "shop_name"
+}
