@@ -17,10 +17,12 @@
   "monthly_rent",
   "section_break_pmhq",
   "shop_code",
+  "enable_payment_reminder",
+  "tenant_email",
   "column_break_aiye",
   "type_of_shop",
   "route",
-  "publish"
+  "is_published"
  ],
  "fields": [
   {
@@ -100,17 +102,29 @@
   },
   {
    "default": "0",
-   "fieldname": "publish",
+   "fieldname": "enable_payment_reminder",
    "fieldtype": "Check",
-   "label": "Publish"
+   "label": "Enable Payment Reminder",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "tenant_email",
+   "fieldtype": "Data",
+   "label": "Tenant Email"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published?"
   }
  ],
  "has_web_view": 1,
  "image_field": "shop_image",
  "index_web_pages_for_search": 1,
- "is_published_field": "publish",
+ "is_published_field": "is_published",
  "links": [],
- "modified": "2024-11-12 22:17:42.008963",
+ "modified": "2024-11-18 10:25:28.773433",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
@@ -128,9 +142,32 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
   }
  ],
- "route": "route",
+ "route": "shop_list",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": [],

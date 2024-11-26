@@ -149,18 +149,7 @@ app_license = "mit"
 # ---------------
 
 # scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"airplane_mode.tasks.weekly"
-# 	],
+	
 # 	"monthly": [
 # 		"airplane_mode.tasks.monthly"
 # 	],

@@ -1,7 +1,211 @@
 {% extends "templates/web.html" %}
 
 {% block page_content %}
-<h1>{{ title |e }}</h1>
+    <div class="container py-5">
+        <!-- Page Header -->
+        <h1 class="text-center text-white mb-5" style="font-size: 3rem; font-weight: 700; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);">{{ title |e }}</h1>
+
+        <!-- Shop Details Section with Soft Shadows and Clear Spacing -->
+        <div class="card shadow-lg bg-white p-4 rounded-lg" style="max-width: 600px; margin: 0 auto; border: none;">
+            <div class="card-body">
+                <h3 class="text-center text-primary mb-4" style="font-size: 1.8rem; font-weight: 600;">Shop Information</h3>
+
+                <!-- Shop Details: Area -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <h5 class="text-muted">Area of the Shop:</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="text-dark">{{ area }}</h5>
+                    </div>
+                </div>
+
+                <!-- Shop Details: Type -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <h5 class="text-muted">Shop Type:</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="text-dark">{{ type_of_shop }}</h5>
+                    </div>
+                </div>
+
+                <!-- Shop Details: Airport -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <h5 class="text-muted">Airport:</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="text-dark">{{ airport }}</h5>
+                    </div>
+                </div>
+
+                <!-- Shop Status -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <h5 class="text-muted">Status of the Shop:</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="text-dark">
+                            {% if status == 'Available' %}
+                                <span class="badge badge-success animated fadeIn">Available</span>
+                            {% elif status == 'Unavailable' %}
+                                <span class="badge badge-danger animated fadeIn">Unavailable</span>
+                            {% else %}
+                                <span class="badge badge-warning animated fadeIn">Unknown</span>
+                            {% endif %}
+                        </h5>
+                    </div>
+                </div>
+
+                <!-- Book Now Button -->
+                <div class="text-center mt-4">
+                    <a href="/book-shop/{{ shop_code }}" class="btn btn-lg btn-gradient rounded-pill animated fadeInUp">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
-<!-- this is a sample default web page template -->
+{% block custom_styles %}
+    <style>
+        /* Main Body Background Color */
+        body {
+            background: linear-gradient(135deg, #6A82FB, #FC5C7D); /* Soft Blue to Pink Gradient */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container Background */
+        .container {
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent White Background */
+            border-radius: 15px;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Card Design: Soft Shadow, Gradient Background */
+        .card {
+            background: linear-gradient(145deg, #ffffff, #f7f7f7); /* Soft White Gradient */
+            color: #333;
+            border-radius: 12px;
+            box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        /* Card Hover Effect */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Header Styling */
+        h1, h3 {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Shop Information Styling */
+        .row {
+            margin-bottom: 2rem;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+        }
+
+        /* Badge Styling: More Noticeable */
+        .badge {
+            font-size: 1.2rem;
+            padding: 0.4em 1em;
+            border-radius: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .badge-success {
+            background-color: #28a745;
+        }
+
+        .badge-danger {
+            background-color: #dc3545;
+        }
+
+        .badge-warning {
+            background-color: #ffc107;
+        }
+
+        /* Hover Effect for Badges */
+        .badge:hover {
+            transform: scale(1.1);
+        }
+
+        /* Book Now Button with Gradient */
+        .btn-gradient {
+            background: linear-gradient(45deg, #FF6F61, #FFD93D); /* Vibrant Red-Orange to Yellow Gradient */
+            border: none;
+            color: white;
+            padding: 1.2em 2em;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        /* Hover Effect for Button */
+        .btn-gradient:hover {
+            background: linear-gradient(45deg, #FFD93D, #FF6F61); /* Reverse Gradient */
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animated "Book Now" Button */
+        .btn-gradient.animated {
+            animation-duration: 0.6s;
+        }
+
+        .animated.fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .btn-gradient {
+                width: 100%;
+                font-size: 1rem;
+                padding: 1em;
+            }
+        }
+    </style>
+{% endblock %}
