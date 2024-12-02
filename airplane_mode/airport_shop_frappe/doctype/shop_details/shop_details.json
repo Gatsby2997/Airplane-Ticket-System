@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{airport}-{shop_name}",
+ "creation": "2024-11-28 01:15:52.148004",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_atij",
+  "shop_code",
+  "tenant_details",
+  "column_break_xavy",
+  "type_of_shop__preferrable_for",
+  "shop_name",
+  "tenant_email",
+  "section_break_ihja",
+  "area_of_shop",
+  "column_break_omvj",
+  "airport",
+  "status",
+  "section_break_pxxe",
+  "shop_image",
+  "is_published",
+  "route",
+  "column_break_llsg",
+  "monthly_rent",
+  "enable_payment_reminder"
+ ],
+ "fields": [
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "label": "Shop Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "area_of_shop",
+   "fieldtype": "Float",
+   "label": "Area of Shop",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_omvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nOccupied",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_pxxe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shop_image",
+   "fieldtype": "Attach Image",
+   "label": "Shop Image",
+   "reqd": 1
+  },
+  {
+   "fieldname": "monthly_rent",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Monthly Rent",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_llsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_atij",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shop_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop Code"
+  },
+  {
+   "fieldname": "column_break_xavy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_shop__preferrable_for",
+   "fieldtype": "Select",
+   "label": "Type of shop / Preferrable for",
+   "options": "Food\nElectronic\nMall\nBevegers"
+  },
+  {
+   "fieldname": "tenant_details",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant Details",
+   "options": "Tenant Detaills"
+  },
+  {
+   "fieldname": "section_break_ihja",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_payment_reminder",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enable Payment Reminder"
+  },
+  {
+   "fetch_from": "tenant_details.email",
+   "fetch_if_empty": 1,
+   "fieldname": "tenant_email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tenant Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "shop_image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
+ "links": [],
+ "modified": "2024-12-02 20:32:25.756444",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Frappe",
+ "name": "Shop Details",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "list_shop",
+ "search_fields": "shop_name, shop_code",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Available"
+  },
+  {
+   "color": "Red",
+   "title": "Occupied"
+  }
+ ],
+ "title_field": "shop_name"
+}

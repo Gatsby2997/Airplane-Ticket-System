@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{contract}-{###}",
+ "creation": "2024-11-28 11:30:50.977464",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payment_date",
+  "rent_amount",
+  "status",
+  "column_break_uolk",
+  "contract",
+  "receipt_number",
+  "airport",
+  "section_break_kepy",
+  "contract_start",
+  "amended_from",
+  "column_break_arib",
+  "shop_owner",
+  "contract_end"
+ ],
+ "fields": [
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Contract Details"
+  },
+  {
+   "fetch_from": "contract.monthly_rent",
+   "fieldname": "rent_amount",
+   "fieldtype": "Data",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nPaid\nOverdue"
+  },
+  {
+   "fetch_from": "contract.tenant_name",
+   "fieldname": "shop_owner",
+   "fieldtype": "Data",
+   "label": "Shop Owner"
+  },
+  {
+   "fetch_from": "contract.airport",
+   "fieldname": "airport",
+   "fieldtype": "Data",
+   "label": "Airport"
+  },
+  {
+   "fieldname": "receipt_number",
+   "fieldtype": "Data",
+   "label": "Receipt Number"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Payment Details",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_uolk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_kepy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "contract.contract_start",
+   "fieldname": "contract_start",
+   "fieldtype": "Data",
+   "label": "Contract Start"
+  },
+  {
+   "fieldname": "column_break_arib",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contract.contract_end",
+   "fieldname": "contract_end",
+   "fieldtype": "Data",
+   "label": "Contract End"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-12-02 14:47:49.802319",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Frappe",
+ "name": "Payment Details",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

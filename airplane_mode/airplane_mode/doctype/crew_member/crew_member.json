@@ -67,6 +67,7 @@
   {
    "fieldname": "role",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Role",
    "options": "Captain\nFirst Officer\nPurser\nFlight Engineer\nFlight Attendant",
    "reqd": 1
@@ -74,7 +75,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-12 00:02:02.162682",
+ "modified": "2024-11-28 12:08:15.731366",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Crew Member",

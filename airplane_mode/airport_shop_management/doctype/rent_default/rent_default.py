@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class RentReminder(Document):
+class RentDefault(Document):
 	pass

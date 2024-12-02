@@ -1,34 +1,26 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-11-14 11:33:44.662996",
+ "creation": "2024-12-02 09:37:20.844187",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "enable_reminder",
-  "default_rent_amount"
+  "amount"
  ],
  "fields": [
   {
-   "default": "0",
-   "fieldname": "enable_reminder",
-   "fieldtype": "Check",
-   "label": "Enable Reminder"
-  },
-  {
-   "default": "70000\n",
-   "fieldname": "default_rent_amount",
-   "fieldtype": "Data",
-   "label": "Default Rent Amount"
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-11-14 11:35:13.289374",
+ "modified": "2024-12-02 09:38:09.428071",
  "modified_by": "Administrator",
- "module": "Airport Shop Management",
- "name": "Rent Reminder",
+ "module": "Airport Shop Frappe",
+ "name": "Monthly Rent",
  "owner": "Administrator",
  "permissions": [
   {

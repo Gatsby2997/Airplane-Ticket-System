@@ -12,18 +12,18 @@ EXTRA_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
-class TestRentReminder(UnitTestCase):
+class TestTenantDetaills(UnitTestCase):
 	"""
-	Unit tests for RentReminder.
+	Unit tests for TenantDetaills.
 	Use this class for testing individual functions and methods.
 	"""
 
 	pass
 
 
-class TestRentReminder(IntegrationTestCase):
+class TestTenantDetaills(IntegrationTestCase):
 	"""
-	Integration tests for RentReminder.
+	Integration tests for TenantDetaills.
 	Use this class for testing interactions between multiple components.
 	"""
 
